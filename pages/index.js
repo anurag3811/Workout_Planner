@@ -109,18 +109,22 @@ const Home = () => {
           setFormData(initialFormData); // Reset form data after submission
         };
 
-        const headingz = "AI \n WORKOUT \n PLANNER"
+        const headingz = "GYM JARVIS"
 
   return (
         <div className="flex flex-col w-full  min-h-screen bg-slate-950">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className=' bg-slate-950 w-full flex flex-col justify-center items-center'>
-        <p className='yellows'> {headingz} </p>
+        <div className=' bg-slate-950 w-full flex flex-col justify-center items-center upar'>
+        <img src='/graphic.png' className=' h-1/2' />
+        <p className='yellows text-center'> {headingz} </p>
+        <p className='oyellow text-center'>Harnessing the intelligence of the ChatGPT API to curate personalized workouts.</p>
 
         </div>
+
+
         <div className='flex justify-center'>
           <form
-            className="bg-white shadow-md rounded px-8 mt-16 py-6 w-11/12"
+            className="bg-white shadow-md rounded px-8 mt-16 py-6 w-11/12 h-min"
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col sm:flex-row">
@@ -334,14 +338,19 @@ const Home = () => {
     )}
 
     {loading && (<>
-      {/* <div id="loader-wrapper"> */}
-  <div id="loader"></div>
+      <div className=' mt-32 h-28'>
+      <div className=' block ml-16'>
+  <div id="loader" ></div>
   
   <div class="loader-section section-left"></div>
   <div class="loader-section section-right"></div>
   
-
-      <div className=' text-white font-semibold text-xl'>Generating your workout plan</div>
+  </div>
+  
+<div className=' flex justify-center'>
+      <div className=' text-white font-semibold text-xl'>Generating your workout plan</div></div>
+      
+      </div>
     </>)}
 
 
