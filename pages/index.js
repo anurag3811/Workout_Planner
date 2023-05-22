@@ -71,7 +71,7 @@ const Home = () => {
           setSubmitted(true);
           setLoading(true);
           setSubmittedFormData(formData); // Store submitted form data in a separate hook
-          ref.current?.scrollIntoView({behavior: 'smooth'});
+          ref.current&&ref.current.scrollIntoView({behavior: 'smooth'});
 
           try {
           const response = await fetch("/api/generate", {
@@ -96,7 +96,7 @@ const Home = () => {
         //   setAnimalInput("");
         } catch(error) {
           // Consider implementing your own error handling logic here
-          console.error(error);
+          console.error(error + "here only");
           alert(error.message);
         }
 
@@ -319,18 +319,18 @@ const Home = () => {
     <div className='flex justify-center' ref={ref} >
       <div className=" border-2 border-white text-white shadow-md rounded px-8 py-6 mt-4 w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/4">
         <h2 className="text-lg font-bold mb-4">Submitted Form Data:</h2>
-        <p><span className='  font-bold mr-1'>Age: </span>{submittedFormData?.age}</p>
-        <p><span className='  font-bold mr-1'>Weight: </span>{submittedFormData?.weight} kg</p>
-        <p><span className='  font-bold mr-1'>Height: </span>{submittedFormData?.height} cm</p>
-        <p><span className='  font-bold mr-1'>Fitness Goal: </span>{submittedFormData?.fitnessGoal}</p>
+        <p><span className='  font-bold mr-1'>Age: </span>{submittedFormData&&submittedFormData.age}</p>
+        <p><span className='  font-bold mr-1'>Weight: </span>{submittedFormData&&submittedFormData.weight} kg</p>
+        <p><span className='  font-bold mr-1'>Height: </span>{submittedFormData&&submittedFormData.height} cm</p>
+        <p><span className='  font-bold mr-1'>Fitness Goal: </span>{submittedFormData&&submittedFormData.fitnessGoal}</p>
         <p><span className='  font-bold mr-1'>Pain/Injury:</span></p>
         <ul>
-          {submittedFormData?.backPain && <li>Back Pain</li>}
-          {submittedFormData?.neckPain && <li>Neck Pain</li>}
-          {submittedFormData?.shoulderPain && <li>Shoulder Pain</li>}
-          {submittedFormData?.kneePain && <li>Knee Pain</li>}
+          {submittedFormData && submittedFormData.backPain && <li>Back Pain</li>}
+          {submittedFormData && submittedFormData.neckPain && <li>Neck Pain</li>}
+          {submittedFormData && submittedFormData.shoulderPain && <li>Shoulder Pain</li>}
+          {submittedFormData && submittedFormData.kneePain && <li>Knee Pain</li>}
         </ul>
-        <p><span className='  font-bold mr-1'>Workout Location: </span>{submittedFormData?.workoutLocation}</p>
+        <p><span className='  font-bold mr-1'>Workout Location: </span>{submittedFormData&&submittedFormData.workoutLocation}</p>
         
       </div></div>
       
@@ -367,7 +367,7 @@ const Home = () => {
 
     
     <div className='results grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3'>
-      {workoutPlanArray?.map((day, index) => (
+      {workoutPlanArray&&workoutPlanArray.map((day, index) => (
         <div key={index} className='m-3 bg-amber-300 rounded-xl p-3 shadow-sm'>
           {/* <h3 className=' mb-4'>Day {index + 1}</h3> */}
           <p>{removeEmptyLines(day)}</p>
