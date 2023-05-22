@@ -4,19 +4,10 @@ const part1 = "sk-rjqLfbflyMdAsj4KKPVST3B"
 
 const part2 = "lbkFJWVgKIcH5jCwIo2R5lVPf" 
 
-<<<<<<< HEAD
-const OPENAI_API_KEY = part1+part2
-
-
-
-const configuration = new Configuration({
-  apiKey: OPENAI_API_KEY,
-=======
 const KEY = part1+part2
 
 const configuration = new Configuration({
   apiKey: KEY,
->>>>>>> 939e3c0c83f6fcf38fabdcbfc3c4934861e3231f
 });
 const openai = new OpenAIApi(configuration);
 
