@@ -82,10 +82,11 @@ const Home = () => {
             body: JSON.stringify({ formData: formData }),
           });
     
-          const data = await response.json();
+          
           if (response.status !== 200) {
             throw new Error(`Request failed with status ${response.status}`);
           }
+          const data = await response.json();
           console.log(data.result);
           setResult(data.result);
           setLoading(false);
