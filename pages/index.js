@@ -322,18 +322,18 @@ const Home = () => {
     <div className='flex justify-center' ref={ref} >
       <div className=" border-2 border-white text-white shadow-md rounded px-8 py-6 mt-4 w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/4">
         <h2 className="text-lg font-bold mb-4">Submitted Form Data:</h2>
-        <p><span className='  font-bold mr-1'>Age: </span>{submittedFormData&&submittedFormData.age}</p>
-        <p><span className='  font-bold mr-1'>Weight: </span>{submittedFormData&&submittedFormData.weight} kg</p>
-        <p><span className='  font-bold mr-1'>Height: </span>{submittedFormData&&submittedFormData.height} cm</p>
-        <p><span className='  font-bold mr-1'>Fitness Goal: </span>{submittedFormData&&submittedFormData.fitnessGoal}</p>
-        <p><span className='  font-bold mr-1'>Pain/Injury:</span></p>
+        <p><span className='  font-bold mr-1 text-amber-300'>Age: </span>{submittedFormData&&submittedFormData.age}</p>
+        <p><span className='  font-bold mr-1 text-amber-300'>Weight: </span>{submittedFormData&&submittedFormData.weight} kg</p>
+        <p><span className='  font-bold mr-1 text-amber-300'>Height: </span>{submittedFormData&&submittedFormData.height} cm</p>
+        <p><span className='  font-bold mr-1 text-amber-300'>Fitness Goal: </span>{submittedFormData&&submittedFormData.fitnessGoal}</p>
+        <p><span className='  font-bold mr-1 text-amber-300'>Pain/Injury:</span></p>
         <ul>
           {submittedFormData && submittedFormData.backPain && <li>Back Pain</li>}
           {submittedFormData && submittedFormData.neckPain && <li>Neck Pain</li>}
           {submittedFormData && submittedFormData.shoulderPain && <li>Shoulder Pain</li>}
           {submittedFormData && submittedFormData.kneePain && <li>Knee Pain</li>}
         </ul>
-        <p><span className='  font-bold mr-1'>Workout Location: </span>{submittedFormData&&submittedFormData.workoutLocation}</p>
+        <p><span className='  font-bold mr-1 text-amber-300'>Workout Location: </span>{submittedFormData&&submittedFormData.workoutLocation}</p>
         
       </div></div>
       
