@@ -65,6 +65,6 @@ function generatePrompt(formData) {
   shoulderPain: ${formData.shoulderPain},
   kneePain: ${formData.kneePain},
 
-make the plan for each day. after everyday just add '***'
+make the plan for 3 days. after everyday just add '***'
   `;
 }
