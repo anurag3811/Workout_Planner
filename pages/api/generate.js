@@ -28,14 +28,14 @@ export default async function (req, res) {
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
-      max_tokens: 4000,
+      max_tokens: 1000,
       prompt: generatePrompt(formData),
       temperature: 0.6,
       top_p: 1,
-  n: 1,
-  stream: false,
-  logprobs: null,
-  stop: "0000"
+      n: 1,
+      stream: false,
+      logprobs: null,
+      stop: "0000"
     });
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch(error) {

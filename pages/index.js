@@ -93,6 +93,8 @@ const Home = () => {
           console.log("hello")
           console.log(typeof(data.result))
           setworkoutPlanArray(data.result.split("***"));
+          // var newArr = workoutPlanArray.slice(0, -1); 
+          // setworkoutPlanArray(newArr);
           console.log(workoutPlanArray)
         //   setAnimalInput("");
         } catch(error) {
